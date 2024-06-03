@@ -36,7 +36,7 @@ class DB
             $sql .= " `id`='{$arg}'";
         }
 
-        echo $sql;
+        //echo $sql;
 
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
@@ -59,7 +59,7 @@ class DB
 
             $sql .= " VALUES('" . join("','", $array) . "')";
         }
-        echo $sql;
+        //echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -105,6 +105,7 @@ class DB
         return $tmp;
     }
 
+
     protected function select($sql, ...$arg)
     {
         if (!empty($arg[0]) && is_array($arg[0])) {
@@ -115,7 +116,6 @@ class DB
         if (!empty($arg[1])) {
             $sql = $sql . $arg[1];
         }
-
         return $sql;
     }
 
@@ -148,7 +148,7 @@ $dept['name'] = '電子商務系';
 
 $Dept->save($dept);
  */
-
+/* 
 echo $Student->count(['dept' => 2]);
 echo "<br>";
-echo $Student->math('max', 'graduate_at');
+echo $Student->math('max', 'graduate_at'); */
